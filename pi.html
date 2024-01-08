@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Confirmation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .red-text {
+            color: red;
+        }
+
+        .green-text {
+            color: green;
+        }
+
+        .loading-animation {
+            display: none;
+        }
+
+        #payment-success {
+            color: green;
+            font-size: 24px;
+            display: none;
+            cursor: pointer;
+            text-decoration: underline;
+            color: blue;
+        }
+
+        #screenshot {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Payment Confirmation</h1>
+
+    <p class="red-text">Send money</p>
+
+    <p class="green-text">01776332846</p>
+
+    <p>After sending money</p>
+
+    <form id="paymentForm">
+        <label for="number">Number:</label>
+        <input type="text" id="number" name="number" required oninput="showScreenshot()">
+
+        <div id="screenshot">
+            <label for="photo">Upload Screenshot:</label>
+            <input type="file" id="photo" name="photo" accept="image/*" required>
+        </div>
+
+        <button type="button" id="okButton" onclick="startLoadingAnimation()">OK</button>
+    </form>
+
+    <div class="loading-animation" id="loadingAnimation">Loading...</div>
+
+    <div id="payment-success" onclick="openLink()">Payment successfully!.... click</div>
+
+    <script>
+        function showScreenshot() {
+            document.getElementById('screenshot').style.display = 'block';
+        }
+
+        function startLoadingAnimation() {
+            document.getElementById('screenshot').style.display = 'none';
+            document.getElementById('paymentForm').style.display = 'none';
+            document.getElementById('loadingAnimation').style.display = 'block';
+            setTimeout(function() {
+                document.getElementById('loadingAnimation').style.display = 'none';
+                document.getElementById('payment-success').style.display = 'block';
+            }, 3000); // Simulating a 3-second loading time
+        }
+
+        function openLink() {
+            window.open("https://www.facebook.com/adhir.mallik.731", "_blank");
+        }
+    </script>
+<h2>contact this id </h2>
+</body>
+</html>

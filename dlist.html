@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diamond List</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            text-align: center;
+            margin: 50px;
+        }
+
+        select {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            background-color: #2ecc71; /* Green background color */
+            color: white; /* White text color */
+        }
+
+        button {
+            display: none;
+            margin-top: 10px;
+            background-color: #e74c3c;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+    <label for="options">Select an option:</label>
+    <select id="options" onchange="showPaymentButton()">
+        <option value="" disabled selected style="display:none;">Select amount</option>
+        <option value="100">100💎 - $80💸</option>
+        <option value="200">200💎 - $180💸</option>
+        <option value="500">500💎 - $400💸</option>
+        <option value="1000">1000💎 - $850💸</option>
+        <option value="weekly">Weekly💥 - $180💸</option>
+        <option value="monthly">Monthly💥 - $990💸</option>
+    </select>
+
+    <button id="paymentButton" onclick="showFacebookButton()">Payment</button>
+
+
+
+    <script>
+        function showPaymentButton() {
+            var optionsSelect = document.getElementById("options");
+            var paymentButton = document.getElementById("paymentButton");
+
+            if (optionsSelect.value !== "") {
+                paymentButton.style.display = "block";
+            } else {
+                paymentButton.style.display = "none";
+            }
+        }
+
+        function showFacebookButton() {
+            window.location.href = "par.html";
+        }
+    </script>
+  
+</body>
+</html>

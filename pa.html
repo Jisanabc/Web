@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<h1>select your payment option</h1>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button Click Redirect</title>
+  <style>
+    .image-button {
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <button class="image-button" onclick="redirectToPi('1.png')">
+    <img src="1.png" alt="Button A">
+  </button>
+
+  <button class="image-button" onclick="redirectToPi('2.png')">
+    <img src="2.png" alt="Button B">
+  </button>
+
+  <button class="image-button" onclick="redirectToPi('3.png')">
+    <img src="3.png" alt="Button C">
+  </button>
+
+  <script>
+    function redirectToPi(imageName) {
+      window.location.href = 'pi.html?image=' + imageName;
+    }
+  </script>
+
+</body>
+</html>
